@@ -12,9 +12,9 @@ export const StoreScreen = ({history,nombre}) => {
     
     return (
         <div>
-            <div>
-        <h1>Store</h1>
-        <h3></h3>
+            
+            <h1>Store</h1>
+        
             <hr/>
 
             <div className="container">
@@ -61,7 +61,7 @@ export const StoreScreen = ({history,nombre}) => {
                         
             
             </div>
-            </div>
+            
         </div>
 
     )

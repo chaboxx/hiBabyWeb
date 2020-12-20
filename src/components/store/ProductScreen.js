@@ -105,7 +105,7 @@ export const ProductScreen = () => {
    const mostrar=seleccionar();
     
 
-
+    
     return (
         <div>
             <h3>
@@ -114,60 +114,146 @@ export const ProductScreen = () => {
         
             <hr/>
 
+            <ul classNme="row row-cols-1 row-cols-md-4 g-4" style={{
+                padding:"15px"
+            }}>
             
-                <ul classNme="row row-cols-1 row-cols-md-4 g-4 container" style={{
-                    padding:"15px"
-                }}>
                     {
                         mostrar.map( e=>{
                             return (
                                 e.map( i=>{
-                                    return <li key={i.id} style={{listStyle:"none",maxWidth:"400px"}}
-                                            className="container carta"
-                                            >
-
-                                    <div className="col" style={{
-                                        
-                                        display:"flex",
-                                        alignItems:"center",
-                                        justifyContent:"center"
+                                    return( 
+                                    
+                                    <li key={i.id} className="row container">
+ 
+                                    
+                                    <div className="col-6 imagen" style={{
+                                        height:"600px"
                                     }}>
-                                        <div className="col-7">
-                                        <p>{i.descripcion} </p>
-                                        <img className="img-fluid" width="250" height="300" src="https://exmopedia.com/wp-content/uploads/2020/10/comprar-ropa-para-bebe-harley-davidson.jpg" alt="imagen" />
-                                        </div>
-                                        <div className="col-5">
 
-                                        <p>{i.genero} </p>
-                                        <p>{i.tallas} </p>
+                                    </div>
+                                    
+
+                                    
+
+
+                                    <div className="col-6">
                                         
+                                        <p className="descripcion" style={{
+                                            color:"#6541E0"
+                                        }}>
+                                            {i.descripcion}
+                                        </p>
+
+                                        <div>
+                                            <div>
+                                                <div style={{
+                                                    border:"1px solid #eee",
+                                                    padding:"0",
+                                                    margin:"0"
+                                                    
+                                                }}>
+                                                    <p className="m-3" style={{
+                                                        textAlign:"center"
+                                                    }}>Sexos</p>
+                                                    <div className="row">
+                                                    { 
+                                                    i.genero.length===1 ? i.genero.map( u=>{
+                                                        return(
+                                                            <p className="col-12 btn btn-primary">
+                                                                {u}
+                                                            </p>
+
+                                                        )
+                                                    }):
+                                                    i.genero.map(u=>{
+                                                        return (
+                                                           <p className="col-6 btn btn-primary">{u}</p>
+                                                                )
+                                                    })}
+                                                    </div>
+                                                </div>
+                                                
+                                                {
+                                                    !(i.tallas)? <p>
+                                                        No hay tallas que mostrar
+                                                    </p>:
+                                                <ul style={{
+                                                    border:"0.8px solid #eee"
+                                                }} className="row row-cols-2 m-2">
+                                                    
+                                                    <p className="m-2"
+                                                    style={{
+                                                        textAlign:"center",
+                                                        fontSize:"20px"
+                                                    }}>Tallas</p>
+                                                    <hr/>
+                                                    {i.tallas.map(n=>{
+                                                        return (
+                                                            <li className="col btn btn-danger m-2" 
+                                                            style={{
+                                                                listStyle:"none",
+                                                                fontSize:"13px"
+                                                            }} key={n}>
+                                                                {n}
+                                                            </li>
+                                                        )
+                                                    })
+                                                    
+                                                    
+                                                    
+                                                    }
+                                                
+                                                </ul>
+                                                }
+                                                <div className="btn btn-light" style={{
+                                                    display:'flex',
+                                                    justifyContent:"center",
+
+
+                                                }}>
+                                                <svg  style={{
+                                                    marginRight:"10px",
+                                                    padding:"0"
+                                                }} xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z"/>
+                                                        <path d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                                                </svg>
+                                                
+                                                <p style={{
+                                                    margin:"0",
+                                                    paddingTop:"3px",
+                                                    textAlign:"center",
+                                                    fontSize:"20px"
+                                                }}>{i.precio}</p>
+                                                </div>
+
+                                            </div>
+
+
                                         </div>
 
                                     </div>
 
-
-
-
-
-
-
-
-
-
                                     </li>
-                                })
+                                    
+                                    )
+                            })
                             )
                         })
                     }
-                        
-                </ul>
+                    
+                    </ul>
 
-            </div>
+        </div>
 
-        
-        
-        
-    )
+    
+    
+    
+)
 }
-
-
+                                
+                                    
+                                    
+                                    
+                                    
